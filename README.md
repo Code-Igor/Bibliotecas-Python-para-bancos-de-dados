@@ -1,5 +1,10 @@
 # Pesquisa de bibliotecas Python para Bancos de Dados
 
+## Integrantes da equipe
+- Igor dos Santos Lopes
+- André Manoel de Santana
+- Denis Sebastian Medina Crusado
+  
 ## Contexto
 Em projetos reais de software, aplicações precisam se conectar a bancos de dados para consultar, inserir, atualizar e excluir informações. No ecossistema Python, existem diversas bibliotecas que permitem essa comunicação, cada uma com finalidades diferentes.
 
