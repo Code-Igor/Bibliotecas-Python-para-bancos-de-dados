@@ -1,4 +1,4 @@
-# Pesquisa-bibliotecas-Python-para-bancos-de-dados
+# Pesquisa de bibliotecas Python para Bancos de Dados
 
 ## Contexto
 Em projetos reais de software, aplicações precisam se conectar a bancos de dados para consultar, inserir, atualizar e excluir informações. No ecossistema Python, existem diversas bibliotecas que permitem essa comunicação, cada uma com finalidades diferentes.
@@ -6,7 +6,7 @@ Em projetos reais de software, aplicações precisam se conectar a bancos de dad
 ## Objetivo
 Pesquisar, comparar e apresentar bibliotecas Python utilizadas para conectar aplicações a bancos de dados relacionais e não relacionais, entendendo suas características, vantagens, limitações e cenários de uso.
 
-## Biblioteca sqlite3
+## Biblioteca sqlite3 vs. psycopg2
 
 ### 1. Qual é o objetivo principal da biblioteca?
 
@@ -23,13 +23,13 @@ Diferentemente de bancos como MySQL e PostgreSQL, normalmente não é necessári
 
 É mais indicada para bancos de dados relacionais, afinal o SQLite utiliza **SQL (Structured Query Language)** e organiza os dados em estruturas como tabelas, linhas e colunas .
 
-## 4. A biblioteca trabalha com SQL puro, ORM ou ambos?
+### 4. A biblioteca trabalha com SQL puro, ORM ou ambos?
 
 A sqlite3 trabalha diretamente com SQL, não sendo um ORM.
 
 Por exemplo:
 
-## 5. Como é feita a instalação?
+### 5. Como é feita a instalação?
 
 Não é necessário instalar a sqlite3 separadamente, pois ela faz parte da **biblioteca padrão do Python**.
 
@@ -41,7 +41,7 @@ import sqlite3
 
 Portanto, normalmente não é necessário executar `pip install sqlite3`.
 
-## 6. Como é criado um exemplo simples de conexão?
+### 6. Como é criado um exemplo simples de conexão?
 
 Podemos utilizar `sqlite3.connect()` para criar uma conexão com um banco de dados.
 
@@ -61,7 +61,7 @@ Nesse exemplo, se o arquivo `meu_banco.db` ainda não existir, o SQLite poderá 
 
 A variável `conexao` representa a conexão entre a aplicação Python e o banco de dados.
 
-## 7. Como executar uma consulta `SELECT` simples?
+### 7. Como executar uma consulta `SELECT` simples?
 
 A consulta é feita a partir de um **"cursor"** que é utilizado para executar o `SELECT`.
 Vamor fingir que já temos um banco de dados com uma tabela 'usuarios', a consulta poderia ser feita assim:
