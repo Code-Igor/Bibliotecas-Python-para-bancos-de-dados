@@ -28,7 +28,6 @@ Diferentemente de bancos como MySQL e PostgreSQL, não é necessário executar u
 
 #### psycopg2
 O psycopg2 permite acessar bancos de dados PostgreSQL.
-
 O PostgreSQL é um sistema gerenciador de banco de dados relacional e objeto-relacional, que utiliza SQL para realizar operações sobre os dados. O psycopg2 atua como uma ponte entre a aplicação Python e uma instância do PostgreSQL. 
 
 ### 3. Ela é mais indicada para bancos relacionais ou não relacionais?
@@ -52,14 +51,25 @@ O psycopg2 trabalha diretamente com SQL, não sendo um ORM.
 
 #### sqlite3
 Não é necessário instalar a sqlite3 separadamente, pois ela faz parte da **biblioteca padrão do Python**.
-
 Basta importá-la:
-
 ```python
 import sqlite3
 ```
 
 #### psycopg2
+O psycopg2 pode ser instalado utilizando o pip:
+```python
+# obs: pode exigir um compilador C
+pip install psycopg2
+
+#versao pre-compilatoria (sem exigir compilador):
+pip install psycopg2-binary
+```
+
+Depois da instalação, a biblioteca pode ser importada normalmente:
+```python
+import psycopg2
+```
 
 ### 6. Como é criado um exemplo simples de conexão?
 
@@ -81,6 +91,26 @@ conexao.close()
 Nesse exemplo, se o arquivo `meu_banco.db` ainda não existir, o SQLite poderá criá-lo automaticamente.
 
 #### psycopg2
+Podemos utilizar psycopg2.connect() para criar uma conexão com um banco de dados PostgreSQL. É necessário informar dados da conexão, como o nome do banco e o usuário. 
+
+```python
+import psycopg2
+
+# representa a conexão entre a aplicação Python e o PostgreSQL
+conexao = psycopg2.connect(
+    dbname="meu_banco",
+    user="postgres",
+    password="minha_senha",
+    host="localhost",
+    port="5432"
+)
+
+print("Conexão realizada com sucesso!")
+
+conexao.close()
+```
+
+O PostgreSQL normalmente funciona como um servidor de banco de dados, portanto é necessário que uma instância do PostgreSQL esteja disponível para que a aplicação possa estabelecer a conexão. 
 
 ### 7. Como executar uma consulta `SELECT` simples?
 
@@ -112,14 +142,34 @@ conexao.close()
 ```
 
 #### psycopg2
+É utilizado cursor para executar o SELECT. O método execute() executa a consulta e fetchall() recupera todos os registros retornados. 
 
+```python
+import psycopg2
 
-## Pesquisa
+# conecta ao banco
+conexao = psycopg2.connect(
+    dbname="meu_banco",
+    user="postgres",
+    password="minha_senha",
+    host="localhost",
+    port="5432"
+)
 
-1. Qual é o objetivo principal da biblioteca?
-2. Que tipo de banco de dados ela permite acessar?
-3. Ela é mais indicada para bancos relacionais ou não relacionais?
-4. A biblioteca trabalha com SQL puro, ORM ou ambos?
-5. Como é feita a instalação?
-6. Como é criado um exemplo simples de conexão?
-7. Como executar uma consulta *SELECT* simples?
+# cria um cursor
+cursor = conexao.cursor()
+
+# executa o SELECT
+cursor.execute("SELECT * FROM usuarios")
+
+# recupera os registros retornados pela consulta
+usuarios = cursor.fetchall()
+
+# exibe os resultados
+for usuario in usuarios:
+    print(usuario)
+
+# fecha o cursor e a conexão
+cursor.close()
+conexao.close()
+```
