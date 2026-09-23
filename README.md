@@ -15,6 +15,8 @@ SQLite é uma biblioteca em linguagem C que permite a aplicações Python se con
 Com ela, é possível criar bancos, criar tabelas e realizar operações como inserir, consultar, atualizar e excluir dados.
 
 #### psycopg2
+O psycopg2 é um adaptador de banco de dados para Python que permite que aplicações Python se conectem e trabalhem com bancos de dados PostgreSQL.
+Com ele, é possível estabelecer conexões com o PostgreSQL, executar comandos SQL, consultar dados, inserir, atualizar e excluir registros, além de controlar transações com operações como commit() e rollback().
 
 
 ### 2. Que tipo de banco de dados ela permite acessar?
