@@ -27,6 +27,9 @@ O SQLite é um banco de dados relacional que normalmente armazena todas as infor
 Diferentemente de bancos como MySQL e PostgreSQL, não é necessário executar um servidor separado para utilizar o SQLite.
 
 #### psycopg2
+O psycopg2 permite acessar bancos de dados PostgreSQL.
+
+O PostgreSQL é um sistema gerenciador de banco de dados relacional e objeto-relacional, que utiliza SQL para realizar operações sobre os dados. O psycopg2 atua como uma ponte entre a aplicação Python e uma instância do PostgreSQL. 
 
 ### 3. Ela é mais indicada para bancos relacionais ou não relacionais?
 
@@ -34,6 +37,7 @@ Diferentemente de bancos como MySQL e PostgreSQL, não é necessário executar u
 É mais indicada para bancos de dados relacionais, afinal o SQLite utiliza **SQL (Structured Query Language)** e organiza os dados em estruturas como tabelas, linhas e colunas.
 
 #### psycopg2
+É indicada para bancos de dados relacionais, especificamente para o PostgreSQL. O PostgreSQL utiliza tabelas, linhas, colunas e SQL para organizar e manipular os dados. 
 
 
 ### 4. A biblioteca trabalha com SQL puro, ORM ou ambos?
@@ -42,6 +46,7 @@ Diferentemente de bancos como MySQL e PostgreSQL, não é necessário executar u
 A sqlite3 trabalha diretamente com SQL, não sendo um ORM.
 
 #### psycopg2
+O psycopg2 trabalha diretamente com SQL, não sendo um ORM.
 
 ### 5. Como é feita a instalação?
 
